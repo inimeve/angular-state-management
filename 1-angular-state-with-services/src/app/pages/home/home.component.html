@@ -1,0 +1,16 @@
+<div class="child-comp-container">
+    <h1>HOME COMPONENT</h1>
+
+    <input (keyup.enter)="onAddTodo(todoTitleInput.value)" #todoTitleInput type="text" placeholder="Todo title...">
+    <button (click)="onAddTodo(todoTitleInput.value)">ADD</button>
+
+    <div>
+        <app-child 
+            *ngFor="let todo of todosStore.todos$ | async"
+            [todo]="todo"
+            (onComplete)="todosStore.setCompleted(todo.id, $event)"
+            (onRemove)="todosStore.removeTodo($event)"
+        ></app-child>
+    </div>        
+
+</div>
