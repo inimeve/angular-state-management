@@ -1,0 +1,22 @@
+<div class="left-side-container">
+    <div class="menu-toggle-container">
+        <i class="fas fa-bars fa-2x"></i>
+    </div>
+    <div class="title-container">
+        <img src="assets/logo.png">
+    </div>
+</div>
+
+<div class="center-side-container">
+  <div>{{counter}}</div>
+  <div class="counter-btn-container">
+    <button (click)="increment()" class="counter-btn"><i class="fas fa-plus"></i></button>
+    <button (click)="decrement()" class="counter-btn"><i class="fas fa-minus"></i></button>
+  </div>
+</div>
+
+<div class="right-side-container">
+    <div class="user-container">
+        <img [src]="avatarUrl">
+    </div>
+</div>

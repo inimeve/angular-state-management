@@ -1,0 +1,46 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    box-shadow: 0.5rem 0 1rem 0 rgba(44,51,73,.1);
+}
+
+.sidebar-item {
+    display: flex;
+    padding: 15px;
+
+    border-bottom: 1px solid lightgray;
+    cursor: pointer;
+    text-decoration: none;
+
+    color: dimgray;
+
+    .item-icon {
+        width: 25px;
+        margin-right: 15px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .item-name {
+        user-select: none;
+    }
+
+    &:hover {
+      color: black;
+    }
+    &:active {
+      text-shadow: 0px 0px 2px lightgray;
+    }
+}
+
+.counter-container {
+  align-self: center;
+  padding: 5px;
+  margin: 15px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  color: dimgrey;
+}
