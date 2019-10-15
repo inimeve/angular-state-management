@@ -1,5 +1,5 @@
-import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
-import { TodosStoreService } from 'src/app/services/todos-store.service';
+import {Component, OnInit} from '@angular/core';
+import {CounterStore} from '../../services/counter.store';
 
 @Component({
   selector: 'app-home',
@@ -8,16 +8,26 @@ import { TodosStoreService } from 'src/app/services/todos-store.service';
 })
 export class HomeComponent implements OnInit {
 
-  @ViewChild('todoTitleInput', {static: false}) todoTitleInput: ElementRef;
+  subjectCounter: number;
 
-  constructor(private todosStore: TodosStoreService) { }
+  beaviorSubjectCounter: number;
 
-  ngOnInit() {
+  constructor(private counterStore: CounterStore) {
+    // this.counterStore.getSubjectCounter().subscribe((counter: number) => {
+    //   this.subjectCounter = counter;
+    // });
+    // this.counterStore.getBehaviorSubjectCounter().subscribe((counter: number) => {
+    //   this.beaviorSubjectCounter = counter;
+    // });
   }
 
-  onAddTodo(title: string){
-    this.todosStore.addTodo(title); 
-    this.todoTitleInput.nativeElement.value = '';
+  ngOnInit() {
+    // this.counterStore.getSubjectCounter().subscribe((counter: number) => {
+    //   this.subjectCounter = counter;
+    // });
+    // this.counterStore.getBehaviorSubjectCounter().subscribe((counter: number) => {
+    //   this.beaviorSubjectCounter = counter;
+    // });
   }
 
 }

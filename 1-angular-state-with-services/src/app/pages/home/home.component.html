@@ -1,16 +1,24 @@
 <div class="child-comp-container">
-    <h1>HOME COMPONENT</h1>
+  <h1>HOME COMPONENT</h1>
 
-    <input (keyup.enter)="onAddTodo(todoTitleInput.value)" #todoTitleInput type="text" placeholder="Todo title...">
-    <button (click)="onAddTodo(todoTitleInput.value)">ADD</button>
+  <div>
+    Subject Counter:
+    <span>{{subjectCounter}}</span>
+  </div>
 
-    <div>
-        <app-child 
-            *ngFor="let todo of todosStore.todos$ | async"
-            [todo]="todo"
-            (onComplete)="todosStore.setCompleted(todo.id, $event)"
-            (onRemove)="todosStore.removeTodo($event)"
-        ></app-child>
-    </div>        
+  <div>
+    Subject Counter | async:
+    <span>{{counterStore.getSubjectCounter() | async}}</span>
+  </div>
+
+  <div>
+    BehaviorSubject Counter:
+    <span>{{subjectCounter}}</span>
+  </div>
+
+  <div>
+    BehaviorSubject Counter | async:
+    <span>{{counterStore.getBehaviorSubjectCounter() |async}}</span>
+  </div>
 
 </div>

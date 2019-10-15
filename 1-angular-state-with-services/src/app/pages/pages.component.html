@@ -1,12 +1,8 @@
 <h1>PAGES COMPONENT</h1>
 
-<input (keyup.enter)="onAddTodo(todoTitleInput.value)" #todoTitleInput type="text" placeholder="Todo title...">
-<button (click)="onAddTodo(todoTitleInput.value)">ADD</button><span> Completed Counter: {{completedCounter}}</span>
-
 <div>
   <button routerLink="">Root</button>
   <button routerLink="home">HOME</button>
-  <button routerLink="todos">TODOS</button>
 </div>
 
 <div class="router-outlet-container">

@@ -9,26 +9,9 @@ import { Todo } from 'src/app/services/todo.model';
 })
 export class ChildComponent implements OnInit {
 
-  @Input()
-  todo: Todo;
-
-  @Output()
-  onComplete = new EventEmitter();
-
-  @Output()
-  onRemove = new EventEmitter();
-
   constructor() { }
 
   ngOnInit() {
-  }
-
-  complete() {
-    this.onComplete.emit(true);
-  }
-
-  remove() {
-    this.onRemove.emit(this.todo.id);
   }
 
 }
