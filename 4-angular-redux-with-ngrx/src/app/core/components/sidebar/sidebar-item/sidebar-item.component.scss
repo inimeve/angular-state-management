@@ -1,0 +1,54 @@
+@import "../sidebar.component.config.scss";
+
+:host {
+  &.active {
+    .sidebar__item {
+      background: rgba( $item-highlight-color, .1 );
+
+      &__icon {
+        border-left: 5px solid $item-highlight-color;
+        padding-left: 4px;
+      }
+    }
+  }
+}
+
+.sidebar__item {
+    display: flex;
+
+    height: 50px;
+
+    border-bottom: 1px solid lightgray;
+    color: $item-text-color;
+
+    cursor: pointer;
+    text-decoration: none;
+    outline: 0 solid transparent;
+
+    &__icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        min-width: 32px;
+        padding: 0 9px;
+    }
+
+    &__name {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        padding: 0 18px 0 0;
+
+        white-space: nowrap;
+        user-select: none;
+    }
+
+    &:hover {
+        color: darken($item-text-color, 10%);
+    }
+    &:active {
+        text-shadow: 0px 0px 2px lighten(dimgrey, 40%);
+    }
+}

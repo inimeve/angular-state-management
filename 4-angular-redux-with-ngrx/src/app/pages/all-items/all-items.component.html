@@ -1,0 +1,8 @@
+<p>all-items works!</p>
+
+<button (click)="addPaymentMethod()">Add payment method</button>
+
+<div>
+  <h3>Payment method list</h3>
+  <p>{{paymentMethodService.getPaymentMethodsList$() | async | json}}</p>
+</div>

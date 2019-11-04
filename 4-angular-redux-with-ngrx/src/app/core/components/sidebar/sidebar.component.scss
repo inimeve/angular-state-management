@@ -1,0 +1,46 @@
+@import "./sidebar.component.config.scss";
+
+:host {
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+  box-shadow: 0.5rem 0 1rem 0 rgba(44,51,73,.1);
+
+  transition: flex $transition-time;
+  
+  &.compacted {
+    flex: 0 0 50px;
+    
+    ::ng-deep .sidebar__item .sidebar__item__icon{
+      transition: font-size $transition-time;
+      font-size: 0.8rem;
+    }
+  }
+
+  &.expanded {
+    flex: 0 0 $sidebar-expanded-width;
+
+    ::ng-deep .sidebar__item .sidebar__item__icon{
+      transition: font-size $transition-time;
+      font-size: 1rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  :host {
+    position: fixed;
+    width: $sidebar-expanded-width;
+    height: 100%;
+    z-index: 1000;
+  
+    background: white;
+
+    transition: width $transition-time;
+
+    &.compacted {
+      width: 0;
+    }
+  }
+}

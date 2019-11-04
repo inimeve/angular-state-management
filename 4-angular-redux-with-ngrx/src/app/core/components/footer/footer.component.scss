@@ -1,0 +1,45 @@
+@import "footer.component.config.scss";
+
+:host {
+  display: flex;
+  flex-direction: row;
+  flex: 0 0 40px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+
+  padding: 0 10px;
+
+  background: ghostwhite;
+  box-shadow: 0 -0.5rem 1rem 0 rgba(44,51,73,.1);
+
+  &__name {
+    display: flex;
+
+    margin: 0 0 0 5px;
+
+    font-weight: bold;
+
+    i {
+      position: relative;
+      top: 4px;
+
+      margin: 0 0 0 5px;
+
+      color: $footer-highlight-color;
+    }
+  }
+
+  &__social {
+    display: flex;
+
+    i {
+      margin: 0 5px 0 0;
+    }
+  }
+
+}
