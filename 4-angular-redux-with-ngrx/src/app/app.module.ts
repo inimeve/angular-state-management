@@ -14,6 +14,8 @@ import {StoreModule} from '@ngrx/store';
 import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import {environment} from '../environments/environment.prod';
 
+import * as fromPet from './core/store/pet/pet.reducer';
+import * as fromPaymentMethod from './core/store/payment-method/payment-method.reducer';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,10 @@ import {environment} from '../environments/environment.prod';
     PagesModule,
     CoreModule.forRoot(),
     CompLibModule,
-    StoreModule.forRoot({}, {
+    StoreModule.forRoot({
+      // pets: fromPet.reducer,
+      // paymentMethod: fromPaymentMethod.reducer
+    }, {
       metaReducers: !environment.production ? [] : [],
       runtimeChecks: {
         strictStateImmutability: true,

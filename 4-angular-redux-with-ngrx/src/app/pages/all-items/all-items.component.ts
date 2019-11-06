@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {PaymentMethodService} from '../../core/store/payment-method/payment-method.service';
+import {PetService} from '../../core/store/pet/pet.service';
 
 @Component({
   selector: 'app-all-items',
@@ -8,11 +9,12 @@ import {PaymentMethodService} from '../../core/store/payment-method/payment-meth
 })
 export class AllItemsComponent implements OnInit {
 
-  constructor(private paymentMethodService: PaymentMethodService) {
+  constructor(private paymentMethodService: PaymentMethodService, private petService: PetService) {
   }
 
   ngOnInit() {
     this.paymentMethodService.loadPaymentMethods();
+    this.petService.loadPets();
   }
 
   addPaymentMethod() {

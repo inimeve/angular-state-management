@@ -3,6 +3,11 @@
 <button (click)="addPaymentMethod()">Add payment method</button>
 
 <div>
-  <h3>Payment method list</h3>
+  <h3>Payment method list (local storage)</h3>
   <p>{{paymentMethodService.getPaymentMethodsList$() | async | json}}</p>
+</div>
+
+<div>
+  <h3>Pet list (http)</h3>
+  <p>{{petService.getPetList$() | async | json}}</p>
 </div>
